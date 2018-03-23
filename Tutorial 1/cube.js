@@ -18,9 +18,18 @@ controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 // Create the shape
 var geometry = new THREE.BoxGeometry(1, 1, 1);
+var cubeMaterials =
+[
+	new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/texture2.jpg'), side: THREE.DoubleSide }), // RIGHT SIDE
+	new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/texture2.jpg'), side: THREE.DoubleSide }), // LEFT SIDE
+	new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/texture2.jpg'), side: THREE.DoubleSide }), // TOP SIDE
+	new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/texture2.jpg'), side: THREE.DoubleSide }), // BOTTOM SIDE
+	new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/texture2.jpg'), side: THREE.DoubleSide }), // FRONT SIDE
+	new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/texture2.jpg'), side: THREE.DoubleSide }) // BACK SIDE
+];
 
 // Create a material, colour or image texture
-var material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
+var material = new THREE.MeshFaceMaterial(cubeMaterials);
 // var material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: false});
 var cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
