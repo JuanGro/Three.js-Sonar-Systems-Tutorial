@@ -9,33 +9,6 @@
 
 	<body>
 		<script src="http://threejs.org/build/three.min.js"></script>
-		<script>
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			document.body.appendChild(renderer.domElement);
-
-			// Game logic
-			var update = function()
-			{
-
-			};
-
-			// Draw scene
-			var render = function()
-			{
-				renderer.render(scene, camera);
-			};
-
-			// Run game loop (update, render, repeat)
-			var GameLoop = function()
-			{
-				requestAnimationFrame(GameLoop);
-				update();
-				render();
-			};
-
-			GameLoop();
-		</script>
+		<script src="./cube.js"></script>
+	</body>
+</html>
